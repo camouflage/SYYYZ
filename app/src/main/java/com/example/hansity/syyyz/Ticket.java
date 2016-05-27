@@ -1,8 +1,5 @@
 package com.example.hansity.syyyz;
 
-/**
- * Created by sunsheng on 5/27/16.
- */
 import java.util.GregorianCalendar;
 
 /**
@@ -15,14 +12,19 @@ public class Ticket {
     private int seatRow;
     private int seatCol;
     private boolean availability;
+    private int price;
 
-    public Ticket(int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, boolean availability) {
+    public Ticket(int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, boolean availability, int price) {
         this.movieTheaterId = movieTheaterId;
         this.movieId = movieId;
         this.time = time;
         this.seatRow = seatRow;
         this.seatCol = seatCol;
         this.availability = availability;
+        this.price = price;
+    }
+
+    public Ticket() {
     }
 
     public int getMovieTheaterId() {
@@ -49,6 +51,10 @@ public class Ticket {
         return availability;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public void setMovieTheaterId(int movieTheaterId) {
         this.movieTheaterId = movieTheaterId;
     }
@@ -71,5 +77,9 @@ public class Ticket {
 
     public void setAvailability(boolean availability) {
         this.availability = availability;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
