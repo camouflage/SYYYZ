@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
  * Created by sunsheng on 5/27/16.
  */
 public class Ticket {
+    private int ticketId;
     private int movieTheaterId;
     private int movieId;
     private GregorianCalendar time;
@@ -14,7 +15,8 @@ public class Ticket {
     private boolean availability;
     private int price;
 
-    public Ticket(int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, boolean availability, int price) {
+    public Ticket(int ticketId, int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, boolean availability, int price) {
+        this.ticketId = ticketId;
         this.movieTheaterId = movieTheaterId;
         this.movieId = movieId;
         this.time = time;
@@ -25,6 +27,10 @@ public class Ticket {
     }
 
     public Ticket() {
+    }
+
+    public int getTicketId() {
+        return ticketId;
     }
 
     public int getMovieTheaterId() {
@@ -53,6 +59,10 @@ public class Ticket {
 
     public int getPrice() {
         return price;
+    }
+
+    public void setTicketId(int ticketId) {
+        this.ticketId = ticketId;
     }
 
     public void setMovieTheaterId(int movieTheaterId) {
