@@ -12,10 +12,10 @@ public class Ticket {
     private GregorianCalendar time;
     private int seatRow;
     private int seatCol;
-    private boolean availability;
+    private int availability;
     private int price;
 
-    public Ticket(int ticketId, int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, boolean availability, int price) {
+    public Ticket(int ticketId, int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
         this.ticketId = ticketId;
         this.movieTheaterId = movieTheaterId;
         this.movieId = movieId;
@@ -53,7 +53,7 @@ public class Ticket {
         return seatCol;
     }
 
-    public boolean isAvailability() {
+    public int getAvailability() {
         return availability;
     }
 
@@ -85,7 +85,7 @@ public class Ticket {
         this.seatCol = seatCol;
     }
 
-    public void setAvailability(boolean availability) {
+    public void setAvailability(int availability) {
         this.availability = availability;
     }
 
