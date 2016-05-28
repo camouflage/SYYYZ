@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:layout_width="184dp"
+            android:layout_height="230dp"
+            android:id="@+id/movie"
+            android:src="@mipmap/movie_ex"
+            android:scaleType="fitXY" />
+
+        <TableLayout
+            android:layout_width="179dp"
+            android:layout_height="232dp"
+            android:layout_gravity="right"
+            android:paddingLeft="5dp"
+            android:layout_weight="0.70">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="大明劫"
+                    android:textSize="30dp"
+                    android:id="@+id/movie_name" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="历史  剧情  战争 "
+                    android:textSize="20dp"
+                    android:id="@+id/movie_type" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90分钟"
+                    android:textSize="20dp"
+                    android:id="@+id/movie_time" />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导演：王竞"
+                    android:textSize="20dp"
+                    android:id="@+id/movie_director" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1642年，大明崇祯15年，全国瘟疫横行，十户九死。全国笼罩 瘟疫的恐怖阴影下。同时，明朝江山内忧外患，外有李自成攻打开封，内有全国瘟疫横行。崇祯皇帝（余少群饰）万不得已将关在死牢内的孙传庭（戴立忍饰）将军释放出来，带兵攻打李自成。 可是全国瘟疫横行，身强力壮的士兵纷纷病倒，几天就不治身亡。军营里面的运尸车一趟一趟的将将士们的尸体运走。江湖游医吴又可（冯远征 饰）临危受命，大胆提出对《伤寒论》的质疑，提出自创一套的祛病方法，创立《瘟疫论》。大明江山的腐朽已到了不可医治的程度，即使有再好的将领，再医术高明的医生也无法挽回大明朝的去势！大明劫，劫数难逃！[1]  "
+        android:id="@+id/movie_describe"
+        android:layout_weight="0.64" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="立即购票"
+        android:id="@+id/buy_ticket" />
+
+
+</LinearLayout>
