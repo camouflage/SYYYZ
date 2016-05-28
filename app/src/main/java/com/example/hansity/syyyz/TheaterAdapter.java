@@ -35,6 +35,7 @@ public class TheaterAdapter extends ArrayAdapter<Theater> {
         list = li;
         listContainer = LayoutInflater.from(con);
     }
+    /*
     public View getView(int position, View convertView, ViewGroup parent) {
         ListItemView  listItemView = null;
 
@@ -58,4 +59,5 @@ public class TheaterAdapter extends ArrayAdapter<Theater> {
 
         return convertView;
     }
+    */
 }

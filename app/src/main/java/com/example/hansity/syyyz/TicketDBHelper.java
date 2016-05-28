@@ -29,7 +29,6 @@ public class TicketDBHelper extends SQLiteOpenHelper {
                 "seatRow integer not null, seatCol integer not null, " +
                 "availability integer not null, price integer not null" +
                 ");";
-        Log.e("FF", Environment.getExternalStorageDirectory().getPath() + "/" + DB_NAME);
         db.execSQL(CREATE_TABLE);
     }
 
