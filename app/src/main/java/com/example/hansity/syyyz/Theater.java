@@ -5,8 +5,6 @@ package com.example.hansity.syyyz;
  */
 
 
-
-
 public class Theater {
     private int theaterId;
     private String theaterName;
