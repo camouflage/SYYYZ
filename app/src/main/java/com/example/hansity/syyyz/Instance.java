@@ -257,7 +257,7 @@ public class Instance {
         mov5.setMovieName("THE IDOL (YA TAYR EL TAYER)");
         mov5.setMovieDirector("Hany Abu-Assad");
         mov5.setMovieType("Drama");
-        mov5.setMovieDuration(105);
+        mov5.setMovieDuration(95);
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
     }
