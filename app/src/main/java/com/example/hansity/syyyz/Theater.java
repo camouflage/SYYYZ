@@ -5,7 +5,7 @@ package com.example.hansity.syyyz;
  */
 
 
-import
+
 
 public class Theater {
     private int theaterId;
