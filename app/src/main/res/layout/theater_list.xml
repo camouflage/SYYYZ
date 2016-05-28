@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="选择日期:"
+                android:textSize="20sp"
+                android:id="@+id/ticket_date"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/date"
+                android:id="@+id/spinner_date" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="场次:"
+                android:textSize="20sp"
+                android:id="@+id/ticket_time"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="312dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/time"
+                android:id="@+id/spinner_time" />
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>
