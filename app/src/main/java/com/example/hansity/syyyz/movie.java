@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 enum Country {China, America, France, Britain, Australia, Japan, Korea, Russia, German}
 enum Sort {scienceFition, love, horror, comedy}
 class Date {
@@ -32,19 +33,19 @@ class Date {
 }
 
 public class movie {
-	public String movieName;   //µçÓ°Ãû×Ö
-	public Country movieCountry;    //µçÓ°²úµØ£¨¹ú¼Ò£©
-	public Sort movieSort;    //µçÓ°Àà±ð
-	public int movieTime;    //µçÓ°Ê±³¤
-	public Date movieDate;    //µçÓ°ÉÏÓ³ÈÕÆÚ
-	public double movieGrade;    //µçÓ°ÆÀ·Ö
-	public ArrayList<String> movieActors;   //ÑÝÔ±ÁÐ±í£¨½ö°üº¬ÑÝÔ±ÐÕÃû£©
-    public String movieIntroduction;   //µçÓ°¼ò½é
+	public String movieName;   //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½
+	public Country movieCountry;    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½Ò£ï¿½
+	public Sort movieSort;    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½
+	public int movieTime;    //ï¿½ï¿½Ó°Ê±ï¿½ï¿½
+	public Date movieDate;    //ï¿½ï¿½Ó°ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½
+	public double movieGrade;    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½
+	public ArrayList<String> movieActors;   //ï¿½ï¿½Ô±ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public String movieIntroduction;   //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½
 
     public movie() {
     	movieActors = new ArrayList<String>();
     }
-    //µçÓ°Ãû×ÖµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Öµï¿½setï¿½ï¿½get
     public void setMovieName(String movieName) {
     	this.movieName = movieName;
     }
@@ -52,7 +53,7 @@ public class movie {
     	return movieName;
     }
 
-    //µçÓ°²úµØµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Øµï¿½setï¿½ï¿½get
     public void setMovieCountry(Country movieCountry) {
     	this.movieCountry = movieCountry;
     }
@@ -60,7 +61,7 @@ public class movie {
     	return movieCountry;
     }
 
-    //µçÓ°Àà±ðµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½setï¿½ï¿½get
     public void setMovieSort(Sort movieSort) {
     	this.movieSort = movieSort;
     }
@@ -68,7 +69,7 @@ public class movie {
     	return movieSort;
     }
 
-    //µçÓ°Ê±³¤µÄsetºÍget
+    //ï¿½ï¿½Ó°Ê±ï¿½ï¿½ï¿½ï¿½setï¿½ï¿½get
     public void setMovieTime(int movieTime) {
     	this.movieTime = movieTime;
     }
@@ -76,7 +77,7 @@ public class movie {
     	return movieTime;
     }
 
-    //µçÓ°ÉÏÓ³ÈÕÆÚµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Úµï¿½setï¿½ï¿½get
     public void setMovieDate(Date movieDate) {
     	this.movieDate = movieDate;
     }
@@ -84,7 +85,7 @@ public class movie {
     	return movieDate;
     }
 
-    //µçÓ°ÆÀ·ÖµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Öµï¿½setï¿½ï¿½get
     public void setMovieGrade(double movieGrade) {
     	this.movieGrade = movieGrade;
     }
@@ -92,7 +93,7 @@ public class movie {
     	return movieGrade;
     }
 
-    //ÑÝÔ±ÁÐ±íµÄsetºÍget
+    //ï¿½ï¿½Ô±ï¿½Ð±ï¿½ï¿½setï¿½ï¿½get
     public void setMovieActors(ArrayList actors) {
     	if (!this.movieActors.isEmpty()) {
     		this.movieActors.clear();
@@ -103,7 +104,7 @@ public class movie {
     	return movieActors;
     }
 
-    //µçÓ°¼ò½éµÄsetºÍget
+    //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½setï¿½ï¿½get
     public void setMovieIntroduction(String movieIntroduction) {
     	this.movieIntroduction = movieIntroduction;
     }
