@@ -1,7 +1,7 @@
 package com.example.hansity.syyyz;
 
 /**
- * Created by Administrator on 2016/5/28.
+ * Created by Hansity on 2016/5/28.
  */
 
 import android.content.Context;
@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 
+import org.w3c.dom.Text;
+
 
 public class TheaterAdapter extends ArrayAdapter<Theater> {
 
@@ -25,7 +27,7 @@ public class TheaterAdapter extends ArrayAdapter<Theater> {
     private LayoutInflater listContainer;
 
     public final class ListItemView{                //�Զ���ؼ�����
-        public ImageView image;
+        public TextView loc;
         public TextView name;
 
     }
@@ -35,7 +37,7 @@ public class TheaterAdapter extends ArrayAdapter<Theater> {
         list = li;
         listContainer = LayoutInflater.from(con);
     }
-    /*
+
     public View getView(int position, View convertView, ViewGroup parent) {
         ListItemView  listItemView = null;
 
@@ -43,21 +45,21 @@ public class TheaterAdapter extends ArrayAdapter<Theater> {
 
             listItemView = new ListItemView();
 
-            convertView = listContainer.inflate(R.layout.format, null);
+            convertView = listContainer.inflate(R.layout.theater_format, null);
 
-            listItemView.image = (ImageView)convertView.findViewById(R.id.photo);
+            listItemView.loc = (TextView)convertView.findViewById(R.id.theater_loc);
 
-            listItemView.name = (TextView)convertView.findViewById(R.id.textView2);
+            listItemView.name = (TextView)convertView.findViewById(R.id.theater_name);
 
             convertView.setTag(listItemView);
 
         } else {
             listItemView = (ListItemView)convertView.getTag();
         }
-        listItemView.image.setBackgroundResource((Integer) list.get(position).getImageId());
-        listItemView.name.setText(list.get(position).name);
+        listItemView.loc.setText(list.get(position).getTheaterLocation());
+        listItemView.name.setText(list.get(position).getTheaterName());
 
         return convertView;
     }
-    */
+
 }
