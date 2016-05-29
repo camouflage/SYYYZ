@@ -21,6 +21,11 @@ public class SelectTheater extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.theater_list);
 
+        /*
+            加数据测试
+        */
+
+
         listViewAdapter = new TheaterAdapter(this, R.layout.theater_format, theaterList);
         ListView listview = (ListView)findViewById(R.id.theater_list);
         listview.setAdapter(listViewAdapter);
