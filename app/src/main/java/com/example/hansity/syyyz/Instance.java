@@ -6,7 +6,8 @@ import android.graphics.BitmapFactory;
  * Created by samsung- on 2016/5/30.
  */
 public class Instance {
-    public void main() {
+    public void main() {}
+
         /*
         Theater th1 = new Theater("TianHe Theater", "TianHe Road No.623 TianYu Square 5th Floor");
         Theater th2 = new Theater("PingAn Theater", "LiWan Area ShiPu Road No.125");
@@ -91,7 +92,7 @@ public class Instance {
         mov5.setMovieDuration(95);
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
-        */
+
         Theater th1 = new Theater("TianHe Theater", "TianHe Road No.623 TianYu Square 5th Floor");
         Theater th2 = new Theater("PingAn Theater", "LiWan Area ShiPu Road No.125");
         Theater th3 = new Theater("SFC ShangHai Theater", "HaiZhu Area JiangYan Road YanHui Square 4th Floor");
@@ -176,6 +177,7 @@ public class Instance {
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
     }
+    /*
     public void entity() {
         Theater th1 = new Theater("TianHe Theater", "TianHe Road No.623 TianYu Square 5th Floor");
         Theater th2 = new Theater("PingAn Theater", "LiWan Area ShiPu Road No.125");
@@ -345,5 +347,5 @@ public class Instance {
         mov5.setMovieDuration(105);
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
-    }
+    } */
 }
