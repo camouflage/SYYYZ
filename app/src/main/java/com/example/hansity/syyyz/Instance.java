@@ -313,7 +313,6 @@ public class Instance {
         mov3.setMovieName("STRATFORD FESTIVAL: THE TAMING OF THE SHREW");
         mov3.setMovieDirector("Chris Abraham, Barry Avrich");
         mov3.setMovieType("Program");
-        mov3.setMovieDuration(173);
         Bitmap bitmapmov3 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov3);
         mov3.setMovieImage(bitmapmov3);
         Movie mov4 = new Movie();
