@@ -1,6 +1,7 @@
 package com.example.hansity.syyyz;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,12 +15,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         TicketDBHelper ticketDBHelper = new TicketDBHelper(this);
         TheaterDBHelper theaterDBHelper = new TheaterDBHelper(this);
+        MovieDBHelper movieDBHelper = new MovieDBHelper(this);
         /*
         ticketDBHelper.drop();
         theaterDBHelper.drop();
+        movieDBHelper.drop();
 
         Ticket t0 = new Ticket(0, 0, new GregorianCalendar(2015, 5, 25), 0, 0, 1, 10);
-        Ticket t1 = new Ticket(1, 0, 0, new GregorianCalendar(2015, 5, 25), 1, 1, 0, 20);
+        //Ticket t1 = new Ticket(1, 0, 0, new GregorianCalendar(2015, 5, 25), 1, 1, 0, 20);
         Ticket t2 = new Ticket(0, 0, new GregorianCalendar(2015, 5, 25), 2, 2, 0, 30);
         Ticket t3 = new Ticket(0, 1, new GregorianCalendar(2015, 5, 26), 3, 3, 0, 40);
         Ticket t4 = new Ticket(0, 2, new GregorianCalendar(2015, 5, 27), 4, 4, 0, 50);
@@ -34,6 +37,11 @@ public class MainActivity extends Activity {
         theaterDBHelper.insert(th0);
         theaterDBHelper.insert(th1);
         */
+
+        Bitmap bm = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+        Movie m0 = new Movie("name", "type", 120, "ss", "newMovie", bm);
+        movieDBHelper.insert(m0);
+
 
         ArrayList<Theater> theaterList = theaterDBHelper.queryAllTheaters();
         for ( Theater theater : theaterList ) {

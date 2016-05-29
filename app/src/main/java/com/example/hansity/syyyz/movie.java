@@ -1,113 +1,96 @@
-import java.util.ArrayList;
+package com.example.hansity.syyyz;
 
-enum Country {China, America, France, Britain, Australia, Japan, Korea, Russia, German}
-enum Sort {scienceFition, love, horror, comedy}
-class Date {
-	public Date(int y, int m, int d) {
-		year = y;
-		month = m;
-		day = d;
-	}
-	public int getYear() {
-		return year;
-	}
-	public int getMonth() {
-		return month;
-	}
-	public int getDay() {
-		return day;
-	}
-	public void setYear(int y) {
-		year = y;
-	}
-	public void setMonth(int m) {
-		month = m;
-	}
-	public void setDay(int d) {
-		day = d;
-	}
-	private int year;
-	private int month;
-	private int day;
-}
+import android.graphics.Bitmap;
 
-public class movie {
-	public String movieName;   //电影名字
-	public Country movieCountry;    //电影产地（国家）
-	public Sort movieSort;    //电影类别
-	public int movieTime;    //电影时长
-	public Date movieDate;    //电影上映日期
-	public double movieGrade;    //电影评分
-	public ArrayList<String> movieActors;   //演员列表（仅包含演员姓名）
-    public String movieIntroduction;   //电影简介
+public class Movie {
+	private int movieId;
+	private String movieName;
+	private String movieType;
+	private int movieDuration; // In minutes
+	private String movieDirector;
+	private String movieDescription;
+    private Bitmap movieImage;
 
-    public movie() {
-    	movieActors = new ArrayList<String>();
+    public Movie(int movieId, String movieName, String movieType, int movieDuration, String movieDirector, String movieDescription, Bitmap movieImage) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.movieType = movieType;
+        this.movieDuration = movieDuration;
+        this.movieDirector = movieDirector;
+        this.movieDescription = movieDescription;
+        this.movieImage = movieImage;
     }
-    //电影名字的set和get
-    public void setMovieName(String movieName) {
-    	this.movieName = movieName;
+
+    public Movie(String movieName, String movieType, int movieDuration, String movieDirector, String movieDescription, Bitmap movieImage) {
+        this.movieName = movieName;
+        this.movieType = movieType;
+        this.movieDuration = movieDuration;
+        this.movieDirector = movieDirector;
+        this.movieDescription = movieDescription;
+        this.movieImage = movieImage;
     }
+
+    public Movie(String movieName, Bitmap movieImage) {
+        this.movieName = movieName;
+        this.movieImage = movieImage;
+    }
+
+    public Movie() {
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
     public String getMovieName() {
-    	return movieName;
+        return movieName;
     }
 
-    //电影产地的set和get
-    public void setMovieCountry(Country movieCountry) {
-    	this.movieCountry = movieCountry;
-    }
-    public Country getMovieCountry() {
-    	return movieCountry;
+    public String getMovieType() {
+        return movieType;
     }
 
-    //电影类别的set和get
-    public void setMovieSort(Sort movieSort) {
-    	this.movieSort = movieSort;
-    }
-    public Sort getMovieSort() {
-    	return movieSort;
+    public int getMovieDuration() {
+        return movieDuration;
     }
 
-    //电影时长的set和get
-    public void setMovieTime(int movieTime) {
-    	this.movieTime = movieTime;
-    }
-    public int getMovieTime() {
-    	return movieTime;
+    public String getMovieDirector() {
+        return movieDirector;
     }
 
-    //电影上映日期的set和get
-    public void setMovieDate(Date movieDate) {
-    	this.movieDate = movieDate;
-    }
-    public Date getMovieDate() {
-    	return movieDate;
+    public String getMovieDescription() {
+        return movieDescription;
     }
 
-    //电影评分的set和get
-    public void setMovieGrade(double movieGrade) {
-    	this.movieGrade = movieGrade;
-    }
-    public double getMovieGrade() {
-    	return movieGrade;
+    public Bitmap getMovieImage() {
+        return movieImage;
     }
 
-    //演员列表的set和get
-    public void setMovieActors(ArrayList actors) {
-    	if (!this.movieActors.isEmpty()) {
-    		this.movieActors.clear();
-    	}
-    	this.movieActors.addAll(actors);
-    }
-    public ArrayList getMovieActors() {
-    	return movieActors;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
-    //电影简介的set和get
-    public void setMovieIntroduction(String movieIntroduction) {
-    	this.movieIntroduction = movieIntroduction;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
-    public String getMovieIntroduction() {
-    	return movieIntroduction;
+
+    public void setMovieType(String movieType) {
+        this.movieType = movieType;
+    }
+
+    public void setMovieDuration(int movieDuration) {
+        this.movieDuration = movieDuration;
+    }
+
+    public void setMovieDirector(String movieDirector) {
+        this.movieDirector = movieDirector;
+    }
+
+    public void setMovieDescription(String movieDescription) {
+        this.movieDescription = movieDescription;
+    }
+
+    public void setMovieImage(Bitmap movieImage) {
+        this.movieImage = movieImage;
     }
 }
