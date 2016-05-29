@@ -2,9 +2,13 @@ package com.example.hansity.syyyz;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sunsheng on 5/28/16.
@@ -51,5 +55,25 @@ public class TheaterDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public ArrayList<Theater> queryAllTheaters() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+
+        ArrayList<Theater> theaterList = new ArrayList<Theater>();
+        if ( cursor != null ) {
+            // Move cursor to the first row
+            if ( cursor.moveToFirst() ) {
+                do {
+                    String theaterName = cursor.getString(cursor.getColumnIndex("theaterName"));
+                    String theaterLocation = cursor.getString(cursor.getColumnIndex("theaterLocation"));
+
+                    theaterList.add(new Theater(theaterName, theaterLocation));
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return theaterList;
     }
 }

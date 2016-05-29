@@ -2,10 +2,14 @@ package com.example.hansity.syyyz;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  * Created by sunsheng on 5/27/16.
@@ -25,7 +29,7 @@ public class TicketDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "create table if not exists " + TABLE_NAME + "(" +
                 "ticketId integer primary key autoincrement, " +
-                "movieTheaterId integer not null, movieId integer not null, time integer not null, " +
+                "theaterId integer not null, movieId integer not null, time integer not null, " +
                 "seatRow integer not null, seatCol integer not null, " +
                 "availability integer not null, price integer not null" +
                 ");";
@@ -42,7 +46,7 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         //cv.put("ticketId", entity.getTicketId());
-        cv.put("movieTheaterId", entity.getMovieTheaterId());
+        cv.put("theaterId", entity.gettheaterId());
         cv.put("movieId", entity.getMovieId());
         cv.put("time", entity.getTime().getTimeInMillis());
         cv.put("seatRow", entity.getSeatRow());
@@ -61,8 +65,8 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         String[] whereArgs = {"" + entity.getTicketId()};
 
         ContentValues cv = new ContentValues();
-        //cv.put("ticketId", entity.getTicketId());
-        cv.put("movieTheaterId", entity.getMovieTheaterId());
+        cv.put("ticketId", entity.getTicketId());
+        cv.put("theaterId", entity.gettheaterId());
         cv.put("movieId", entity.getMovieId());
         cv.put("time", entity.getTime().getTimeInMillis());
         cv.put("seatRow", entity.getSeatRow());
@@ -80,6 +84,33 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public ArrayList<Ticket> queryTicketsBytheaterAndTime(int theaterId, int movieId, GregorianCalendar time) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
+                " WHERE movieId = " + movieId +
+                " AND theaterId = " + theaterId +
+                " AND time = " + time.getTimeInMillis(), null);
+
+        ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
+        if ( cursor != null ) {
+            // Move cursor to the first row
+            if ( cursor.moveToFirst() ) {
+                do {
+                    int ticketId = cursor.getInt(cursor.getColumnIndex("ticketId"));
+                    int seatRow = cursor.getInt(cursor.getColumnIndex("seatRow"));
+                    int seatCol = cursor.getInt(cursor.getColumnIndex("seatCol"));
+                    int availability = cursor.getInt(cursor.getColumnIndex("availability"));
+                    int price = cursor.getInt(cursor.getColumnIndex("price"));
+
+                    ticketList.add(new Ticket(ticketId, theaterId, movieId, time, seatRow, seatCol, availability, price));
+
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return ticketList;
     }
 }
 

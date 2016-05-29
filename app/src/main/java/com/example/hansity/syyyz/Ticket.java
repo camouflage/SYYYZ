@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
  */
 public class Ticket {
     private int ticketId;
-    private int movieTheaterId;
+    private int theaterId;
     private int movieId;
     private GregorianCalendar time;
     private int seatRow;
@@ -15,9 +15,9 @@ public class Ticket {
     private int availability;
     private int price;
 
-    public Ticket(int ticketId, int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
+    public Ticket(int ticketId, int theaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
         this.ticketId = ticketId;
-        this.movieTheaterId = movieTheaterId;
+        this.theaterId = theaterId;
         this.movieId = movieId;
         this.time = time;
         this.seatRow = seatRow;
@@ -26,8 +26,8 @@ public class Ticket {
         this.price = price;
     }
 
-    public Ticket(int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
-        this.movieTheaterId = movieTheaterId;
+    public Ticket(int theaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
+        this.theaterId = theaterId;
         this.movieId = movieId;
         this.time = time;
         this.seatRow = seatRow;
@@ -43,8 +43,8 @@ public class Ticket {
         return ticketId;
     }
 
-    public int getMovieTheaterId() {
-        return movieTheaterId;
+    public int gettheaterId() {
+        return theaterId;
     }
 
     public int getMovieId() {
@@ -75,8 +75,8 @@ public class Ticket {
         this.ticketId = ticketId;
     }
 
-    public void setMovieTheaterId(int movieTheaterId) {
-        this.movieTheaterId = movieTheaterId;
+    public void settheaterId(int theaterId) {
+        this.theaterId = theaterId;
     }
 
     public void setMovieId(int movieId) {
