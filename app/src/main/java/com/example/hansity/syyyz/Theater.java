@@ -16,6 +16,11 @@ public class Theater {
         theaterLocation = theaterlocation;
     }
 
+    public Theater(String theaterName, String theaterLocation) {
+        this.theaterName = theaterName;
+        this.theaterLocation = theaterLocation;
+    }
+
     Theater() {}
 
     int getTheaterId() {

@@ -34,14 +34,14 @@ public class TicketDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXITS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
     public long insert(Ticket entity) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("ticketId", entity.getTicketId());
+        //cv.put("ticketId", entity.getTicketId());
         cv.put("movieTheaterId", entity.getMovieTheaterId());
         cv.put("movieId", entity.getMovieId());
         cv.put("time", entity.getTime().getTimeInMillis());
@@ -61,7 +61,7 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         String[] whereArgs = {"" + entity.getTicketId()};
 
         ContentValues cv = new ContentValues();
-        cv.put("ticketId", entity.getTicketId());
+        //cv.put("ticketId", entity.getTicketId());
         cv.put("movieTheaterId", entity.getMovieTheaterId());
         cv.put("movieId", entity.getMovieId());
         cv.put("time", entity.getTime().getTimeInMillis());
@@ -74,6 +74,12 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         db.close();
 
         return rows;
+    }
+
+    public void drop() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 }
 

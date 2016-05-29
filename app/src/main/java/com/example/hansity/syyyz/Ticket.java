@@ -26,6 +26,16 @@ public class Ticket {
         this.price = price;
     }
 
+    public Ticket(int movieTheaterId, int movieId, GregorianCalendar time, int seatRow, int seatCol, int availability, int price) {
+        this.movieTheaterId = movieTheaterId;
+        this.movieId = movieId;
+        this.time = time;
+        this.seatRow = seatRow;
+        this.seatCol = seatCol;
+        this.availability = availability;
+        this.price = price;
+    }
+
     public Ticket() {
     }
 

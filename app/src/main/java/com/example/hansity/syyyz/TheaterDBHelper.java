@@ -31,19 +31,25 @@ public class TheaterDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXITS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
     public long insert(Theater entity) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("theaterId", entity.getTheaterId());
+        //cv.put("theaterId", entity.getTheaterId());
         cv.put("theaterName", entity.getTheaterName());
         cv.put("theaterLocation", entity.getTheaterLocation());
 
         long id = db.insert(TABLE_NAME, null, cv);
         db.close();
         return id;
+    }
+
+    public void drop() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 }
