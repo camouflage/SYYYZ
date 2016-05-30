@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Hansity on 2016/5/29.
  */
 
-/*
+
 
 public class SelectMovie extends Activity {
     private List<Movie> movieList = new ArrayList<Movie>();
@@ -32,16 +32,10 @@ public class SelectMovie extends Activity {
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View view, int position, long id){
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
-                TextView TV = (TextView)view.findViewById(R.id.textView2);
-                bundle.putString("name", TV.getText().toString());
-                intent.putExtras(bundle);
-                intent.setClass(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+
             }
         });
     }
 }
 
-*/
+
