@@ -19,7 +19,7 @@ import android.widget.BaseAdapter;
 
 import org.w3c.dom.Text;
 
-/*
+
 public class MovieAdapter extends ArrayAdapter<Movie> {
 
     private List<Movie> list;
@@ -56,7 +56,7 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
         } else {
             listItemView = (ListItemView)convertView.getTag();
         }
-        listItemView.pic.setBackgroundResource((Integer) list.get(position).getImageId());
+        listItemView.pic.setImageBitmap(list.get(position).getMovieImage());
         listItemView.name.setText(list.get(position).getMovieName());
 
         return convertView;
@@ -64,4 +64,3 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
 
 }
 
-*/
