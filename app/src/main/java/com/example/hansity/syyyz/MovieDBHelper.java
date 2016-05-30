@@ -31,7 +31,7 @@ public class MovieDBHelper extends SQLiteOpenHelper {
                 "movieId integer primary key autoincrement, " +
                 "movieName text not null, movieType text not null, movieDuration integer not null, " +
                 "movieDirector text not null, movieDescription text not null, " +
-                "movieImg blob not null" +
+                "movieImage blob not null" +
                 ");";
         db.execSQL(CREATE_TABLE);
     }
@@ -106,7 +106,7 @@ public class MovieDBHelper extends SQLiteOpenHelper {
 
     public ArrayList<Movie> queryById(int movieId) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT movieName, movieImage FROM " + TABLE_NAME +
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
                 " WHERE movieId = " + movieId, null);
 
         ArrayList<Movie> movieList = new ArrayList<Movie>();
@@ -117,8 +117,8 @@ public class MovieDBHelper extends SQLiteOpenHelper {
                     String movieName  = cursor.getString(cursor.getColumnIndex("movieName"));
                     String movieType  = cursor.getString(cursor.getColumnIndex("movieType"));
                     int movieDuration = cursor.getInt(cursor.getColumnIndex("movieDuration"));
-                    String movieDirector  = cursor.getString(cursor.getColumnIndex("movieDirecror"));
-                    String movieDescription  = cursor.getString(cursor.getColumnIndex("movieDescripton"));
+                    String movieDirector  = cursor.getString(cursor.getColumnIndex("movieDirector"));
+                    String movieDescription  = cursor.getString(cursor.getColumnIndex("movieDescription"));
                     Bitmap movieImage = bitmapUtil.getImage(cursor.getBlob(cursor.getColumnIndex("movieImage")));
 
                     movieList.add(new Movie(movieName, movieType, movieDuration, movieDirector, movieDescription, movieImage));

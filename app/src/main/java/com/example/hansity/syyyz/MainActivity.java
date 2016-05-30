@@ -16,11 +16,12 @@ public class MainActivity extends Activity {
         TicketDBHelper ticketDBHelper = new TicketDBHelper(this);
         TheaterDBHelper theaterDBHelper = new TheaterDBHelper(this);
         MovieDBHelper movieDBHelper = new MovieDBHelper(this);
-        /*
+
         ticketDBHelper.drop();
         theaterDBHelper.drop();
         movieDBHelper.drop();
 
+        /*
         Ticket t0 = new Ticket(0, 0, new GregorianCalendar(2015, 5, 25), 0, 0, 1, 10);
         //Ticket t1 = new Ticket(1, 0, 0, new GregorianCalendar(2015, 5, 25), 1, 1, 0, 20);
         Ticket t2 = new Ticket(0, 0, new GregorianCalendar(2015, 5, 25), 2, 2, 0, 30);
@@ -40,9 +41,11 @@ public class MainActivity extends Activity {
 
         Bitmap bm = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
         Movie m0 = new Movie("name", "type", 120, "ss", "newMovie", bm);
+        Movie m1 = new Movie("name2", "type2", 220, "ss2", "newMovie2", bm);
         movieDBHelper.insert(m0);
+        movieDBHelper.insert(m1);
 
-
+        /*
         ArrayList<Theater> theaterList = theaterDBHelper.queryAllTheaters();
         for ( Theater theater : theaterList ) {
             Log.e("myInfo", theater.getTheaterId() + theater.getTheaterName());
@@ -52,9 +55,22 @@ public class MainActivity extends Activity {
         for ( Ticket ticket : ticketList ) {
             Log.e("myInfo", ticket.getTicketId() + " " + ticket.getSeatRow() + " " + ticket.getAvailability() + " " + ticket.getPrice());
         }
+        */
+        ArrayList<Movie> movieList = movieDBHelper.queryAll();
+        for ( Movie movie : movieList ) {
+            Log.e("myInfo", movie.getMovieName());
+        }
+
+        movieList = movieDBHelper.queryById(1);
+        for ( Movie movie : movieList ) {
+            Log.e("myInfo", movie.getMovieName() + " " +  movie.getMovieType() + " " +
+                    movie.getMovieDuration() + " " + movie.getMovieDirector() + " " + movie.getMovieDescription() );
+        }
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
     }
 }
