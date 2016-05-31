@@ -76,7 +76,7 @@ public class SeatSelectActivity extends AppCompatActivity {
                 }
                 else {
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            "有人预订了!", Toast.LENGTH_LONG);
+                            "傻儿子，有人预订了你还点？", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
 
@@ -107,5 +107,6 @@ public class SeatSelectActivity extends AppCompatActivity {
         }
 
     }
+
 }
 
