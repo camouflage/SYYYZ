@@ -17,10 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectTheater"></activity>
-        <activity android:name=".SelectMovie"></activity>
-        <activity android:name=".MovieDetail"></activity>
-        <activity android:name=".SeatSelectActivity"></activity>
+        <activity android:name=".SelectTheater" />
+        <activity android:name=".SelectMovie" />
+        <activity android:name=".MovieDetail" />
+        <activity android:name=".SeatSelectActivity" />
+        <activity android:name=".SigninActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>
