@@ -30,7 +30,8 @@ public class Movie {
         this.movieImage = movieImage;
     }
 
-    public Movie(String movieName, Bitmap movieImage) {
+    public Movie(int movieid, String movieName, Bitmap movieImage) {
+        this.movieId = movieid;
         this.movieName = movieName;
         this.movieImage = movieImage;
     }

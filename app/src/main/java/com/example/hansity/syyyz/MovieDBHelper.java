@@ -86,17 +86,18 @@ public class MovieDBHelper extends SQLiteOpenHelper {
 
     public ArrayList<Movie> queryAll() {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT movieName, movieImage FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT movieId, movieName, movieImage FROM " + TABLE_NAME, null);
 
         ArrayList<Movie> movieList = new ArrayList<Movie>();
         if ( cursor != null ) {
             // Move cursor to the first row
             if ( cursor.moveToFirst() ) {
                 do {
+                    int movieId = cursor.getInt(cursor.getColumnIndex("movieId"));
                     String movieName  = cursor.getString(cursor.getColumnIndex("movieName"));
                     Bitmap movieImage = bitmapUtil.getImage(cursor.getBlob(cursor.getColumnIndex("movieImage")));
 
-                    movieList.add(new Movie(movieName, movieImage));
+                    movieList.add(new Movie(movieId, movieName, movieImage));
                 } while (cursor.moveToNext());
             }
         }
@@ -104,28 +105,19 @@ public class MovieDBHelper extends SQLiteOpenHelper {
         return movieList;
     }
 
-    public ArrayList<Movie> queryById(int movieId) {
+    public Movie queryById(int movieId) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
                 " WHERE movieId = " + movieId, null);
 
-        ArrayList<Movie> movieList = new ArrayList<Movie>();
-        if ( cursor != null ) {
-            // Move cursor to the first row
-            if ( cursor.moveToFirst() ) {
-                do {
-                    String movieName  = cursor.getString(cursor.getColumnIndex("movieName"));
-                    String movieType  = cursor.getString(cursor.getColumnIndex("movieType"));
-                    int movieDuration = cursor.getInt(cursor.getColumnIndex("movieDuration"));
-                    String movieDirector  = cursor.getString(cursor.getColumnIndex("movieDirector"));
-                    String movieDescription  = cursor.getString(cursor.getColumnIndex("movieDescription"));
-                    Bitmap movieImage = bitmapUtil.getImage(cursor.getBlob(cursor.getColumnIndex("movieImage")));
+        String movieName  = cursor.getString(cursor.getColumnIndex("movieName"));
+        String movieType  = cursor.getString(cursor.getColumnIndex("movieType"));
+        int movieDuration = cursor.getInt(cursor.getColumnIndex("movieDuration"));
+        String movieDirector  = cursor.getString(cursor.getColumnIndex("movieDirector"));
+        String movieDescription  = cursor.getString(cursor.getColumnIndex("movieDescription"));
+        Bitmap movieImage = bitmapUtil.getImage(cursor.getBlob(cursor.getColumnIndex("movieImage")));
 
-                    movieList.add(new Movie(movieName, movieType, movieDuration, movieDirector, movieDescription, movieImage));
-                } while (cursor.moveToNext());
-            }
-        }
+        return new Movie(movieName, movieType, movieDuration, movieDirector, movieDescription, movieImage);
 
-        return movieList;
     }
 }

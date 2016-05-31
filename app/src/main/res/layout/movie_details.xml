@@ -4,10 +4,24 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详细信息"
+        android:id="@+id/title"
+        android:textSize="35sp"
+        android:background="#FF7F50"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_weight="0.09" />
+
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         >
 
         <ImageView
@@ -78,6 +92,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FF7F50"
         android:text="立即购票"
         android:id="@+id/buy_ticket" />
 

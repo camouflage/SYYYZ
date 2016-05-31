@@ -19,9 +19,11 @@
         </activity>
         <activity android:name=".SelectTheater">
         </activity>
+
         <activity android:name=".SelectMovie">
         </activity>
-        <activity android:name=".SelectTheater">
+
+        <activity android:name=".MovieDetail">
         </activity>
     </application>
 
