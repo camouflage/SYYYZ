@@ -19,7 +19,6 @@ import java.util.Map;
 
 public class SeatSelectActivity extends AppCompatActivity {
 
-    @Override
     private GridView gridView;
     private int[]imageIds = new int[] {R.drawable.empty_seat};
     private Button button;
@@ -77,7 +76,7 @@ public class SeatSelectActivity extends AppCompatActivity {
                 }
                 else {
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            "傻儿子，有人预订了你还点？", Toast.LENGTH_LONG);
+                            "有人预订了!", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
 
@@ -101,9 +100,9 @@ public class SeatSelectActivity extends AppCompatActivity {
         Seat t = new Seat();
         for(int i = 0; i<seat_num;i++) {
             if(seat_state[i]==1) {
-                t.row = i / 10 +1;
-                t.column = i % 10+1;
-                s += t.row +"排"+t.column+"列\n";
+                t.setRow(i / 10 +1);
+                t.setColumn(i % 10+1);
+                s += t.getRow() +"排"+t.getColumn()+"列\n";
             }
         }
 
