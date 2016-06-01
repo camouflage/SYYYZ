@@ -1,5 +1,35 @@
 package com.example.hansity.syyyz;
 
+/*
+You Wei's version
+
+public class MyDatabaseHelper extends SQLiteOpenHelper
+{
+    final String CREATE_TABLE_SQL =
+            "create table news_inf(_id integer"
+                    + " primary key autoincrement,"
+                    + " news_title varchar(50),"
+                    + " news_content varchar(255))";
+    public MyDatabaseHelper(Context context, String name, int version)
+    {
+        super(context, name, null, version);
+    }
+    @Override
+    public void onCreate(SQLiteDatabase db)
+    {
+        // 第一次使用数据库时自动建表
+        db.execSQL(CREATE_TABLE_SQL);
+    }
+    @Override
+    public void onUpgrade(SQLiteDatabase db
+            , int oldVersion, int newVersion)
+    {
+        System.out.println("--------onUpdate Called--------"
+                + oldVersion + "--->" + newVersion);
+    }
+}
+*/
+
 /**
  * Created by samsung- on 2016/5/30.
  */
@@ -9,11 +39,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
-public class UserDBHandler extends SQLiteOpenHelper {
+public class UserDBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "syyyzUser.db";
     private static final String TABLE_NAME = "Users";
     private static final int Version = 1;
-    public UserDBHandler(Context context, String name, CursorFactory factory, int version) {
+    public UserDBHelper(Context context, String name, CursorFactory factory, int version) {
         super(context, DB_NAME, factory, Version);
     }
     @Override
