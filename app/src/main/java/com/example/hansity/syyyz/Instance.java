@@ -284,7 +284,7 @@ public class Instance {
         mov1.setMovieType("action/adventure/science fiction");
         Bitmap bitmapmov1 = BitmapFactory.decodeResource.getBaseContext().getResources(), R.drawable.mov1);
         mov1.setMovieImage(bitmapmov1);
-        mov1.setMovieDuration(165);
+       // mov1.setMovieDuration(165);
         Movie mov2 = new Movie();
         String mov2description = "Since the dawn of civilization, he was worshipped as a god. " +
                 "Apocalypse, the first and most powerful mutant from Marvel's X-Men universe," +
