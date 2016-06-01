@@ -1,5 +1,4 @@
 package com.example.hansity.syyyz;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -8,8 +7,7 @@ import android.graphics.BitmapFactory;
  */
 public class Instance {
     public void main() {
-        TicketDBHelper ticketDBHelper = new TicketDBHelper(this);
-        TheaterDBHelper theaterDBHelper = new TheaterDBHelper(this);
+        /*
         Theater th1 = new Theater("TianHe Theater", "TianHe Road No.623 TianYu Square 5th Floor");
         Theater th2 = new Theater("PingAn Theater", "LiWan Area ShiPu Road No.125");
         Theater th3 = new Theater("SFC ShangHai Theater", "HaiZhu Area JiangYan Road YanHui Square 4th Floor");
@@ -29,7 +27,7 @@ public class Instance {
         mov1.setMovieName("Captain America: Civil War");
         mov1.setMovieDirector("Anthony Russo, Joe Russo");
         mov1.setMovieType("action/adventure/science fiction");
-        Bitmap bitmapmov1 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov1);
+        Bitmap bitmapmov1 = BitmapFactory.decodeResource.getBaseContext().getResources(), R.drawable.mov1);
         mov1.setMovieImage(bitmapmov1);
         mov1.setMovieDuration(165);
         Movie mov2 = new Movie();
@@ -93,5 +91,7 @@ public class Instance {
         mov5.setMovieDuration(95);
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
+        */
     }
+
 }
