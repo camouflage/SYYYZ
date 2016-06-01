@@ -22,7 +22,7 @@
         <activity android:name=".MovieDetail" />
         <activity android:name=".SeatSelectActivity" />
         <activity android:name=".SigninActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
