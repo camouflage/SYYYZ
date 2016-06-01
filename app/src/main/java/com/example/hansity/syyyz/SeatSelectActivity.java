@@ -42,7 +42,7 @@ public class SeatSelectActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_seat_select);
         List<Map<String,Object>> listItems = new ArrayList<Map<String,Object>>();
 
         for(int i = 0; i<seat_num;i++) {

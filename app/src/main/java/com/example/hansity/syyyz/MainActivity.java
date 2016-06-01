@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
             Log.e("myInfo", movie.getMovieName());
         }
 
-        movieList = movieDBHelper.queryById(1);
+        //movieList = movieDBHelper.queryById(1);
         for ( Movie movie : movieList ) {
             Log.e("myInfo", movie.getMovieName() + " " +  movie.getMovieType() + " " +
                     movie.getMovieDuration() + " " + movie.getMovieDirector() + " " + movie.getMovieDescription() );
