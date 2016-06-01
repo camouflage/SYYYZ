@@ -1,6 +1,7 @@
 package com.example.hansity.syyyz;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SeatSelectActivity extends AppCompatActivity {
+public class SeatSelectActivity extends Activity {
 
     private GridView gridView;
     private int[]imageIds = new int[] {R.drawable.empty_seat};

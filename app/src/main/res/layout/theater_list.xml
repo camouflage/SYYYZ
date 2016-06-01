@@ -5,7 +5,18 @@
     android:weightSum="1">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:text="选择影院及场次"
+        android:id="@+id/textView2"
+        android:textSize="35sp"
+        android:background="#FF7F50"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+
     <TableLayout
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -48,15 +59,18 @@
     <ListView
         android:id="@+id/theater_list"
         android:layout_width="match_parent"
-        android:layout_height="393dp"
+        android:layout_height="330dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" >
     </ListView>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="确认"
+        android:layout_height="match_parent"
+        android:text="选座"
+        android:textSize="25sp"
+        android:layout_gravity="bottom"
+        android:background="#FF7F50"
         android:id="@+id/confirm" />
 
 </LinearLayout>
