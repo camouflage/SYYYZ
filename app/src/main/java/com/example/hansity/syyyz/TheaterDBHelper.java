@@ -28,7 +28,7 @@ public class TheaterDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "create table if not exists " + TABLE_NAME + "(" +
                 "theaterId integer primary key autoincrement, " +
-                "theaterName text, theaterLocation text" +
+                "theaterName text, theaterLocation text, price integer" +
                 ");";
         db.execSQL(CREATE_TABLE);
     }
@@ -45,6 +45,7 @@ public class TheaterDBHelper extends SQLiteOpenHelper {
         //cv.put("theaterId", entity.getTheaterId());
         cv.put("theaterName", entity.getTheaterName());
         cv.put("theaterLocation", entity.getTheaterLocation());
+        cv.put("price", entity.getPrice());
 
         long id = db.insert(TABLE_NAME, null, cv);
         db.close();
@@ -66,10 +67,12 @@ public class TheaterDBHelper extends SQLiteOpenHelper {
             // Move cursor to the first row
             if ( cursor.moveToFirst() ) {
                 do {
+                    int id = cursor.getInt(cursor.getColumnIndex("theaterId"));
                     String theaterName = cursor.getString(cursor.getColumnIndex("theaterName"));
                     String theaterLocation = cursor.getString(cursor.getColumnIndex("theaterLocation"));
+                    int price = cursor.getInt(cursor.getColumnIndex("price"));
 
-                    theaterList.add(new Theater(theaterName, theaterLocation));
+                    theaterList.add(new Theater(id, theaterName, theaterLocation, price));
                 } while (cursor.moveToNext());
             }
         }

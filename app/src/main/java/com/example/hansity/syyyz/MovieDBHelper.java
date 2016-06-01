@@ -110,6 +110,8 @@ public class MovieDBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
                 " WHERE movieId = " + movieId, null);
 
+        cursor.moveToFirst();
+
         String movieName  = cursor.getString(cursor.getColumnIndex("movieName"));
         String movieType  = cursor.getString(cursor.getColumnIndex("movieType"));
         int movieDuration = cursor.getInt(cursor.getColumnIndex("movieDuration"));
@@ -117,7 +119,7 @@ public class MovieDBHelper extends SQLiteOpenHelper {
         String movieDescription  = cursor.getString(cursor.getColumnIndex("movieDescription"));
         Bitmap movieImage = bitmapUtil.getImage(cursor.getBlob(cursor.getColumnIndex("movieImage")));
 
-        return new Movie(movieName, movieType, movieDuration, movieDirector, movieDescription, movieImage);
+        return new Movie(movieId, movieName, movieType, movieDuration, movieDirector, movieDescription, movieImage);
 
     }
 }

@@ -86,6 +86,7 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /*
     public ArrayList<Ticket> queryTicketsBytheaterAndTime(int theaterId, int movieId, GregorianCalendar time) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
@@ -111,6 +112,34 @@ public class TicketDBHelper extends SQLiteOpenHelper {
         }
 
         return ticketList;
+    }
+    */
+
+    // Return seat availability array.
+    public int[][] queryTicketsBytheaterAndTime(int theaterId, int movieId, GregorianCalendar time) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME +
+                " WHERE movieId = " + movieId +
+                " AND theaterId = " + theaterId +
+                " AND time = " + time.getTimeInMillis(), null);
+
+        int numberOfRows = 10;
+        int numberOfCols = 10;
+        int sa[][] = new int[numberOfRows][numberOfCols];
+        if ( cursor != null ) {
+            // Move cursor to the first row
+            if ( cursor.moveToFirst() ) {
+                do {
+                    int seatRow = cursor.getInt(cursor.getColumnIndex("seatRow"));
+                    int seatCol = cursor.getInt(cursor.getColumnIndex("seatCol"));
+                    int availability = cursor.getInt(cursor.getColumnIndex("availability"));
+
+                    sa[seatRow][seatCol] = availability;
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return sa;
     }
 }
 
