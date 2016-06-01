@@ -91,7 +91,7 @@ public class Instance {
         mov5.setMovieDuration(95);
         Bitmap bitmapmov5 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov5);
         mov5.setMovieImage(bitmapmov5);
-        */
+
         Theater th1 = new Theater("TianHe Theater", "TianHe Road No.623 TianYu Square 5th Floor");
         Theater th2 = new Theater("PingAn Theater", "LiWan Area ShiPu Road No.125");
         Theater th3 = new Theater("SFC ShangHai Theater", "HaiZhu Area JiangYan Road YanHui Square 4th Floor");
@@ -211,7 +211,7 @@ public class Instance {
                 "X-Men to stop their greatest nemesis and save mankind from complete destruction.";
         mov2.setMovieDescription(mov2description);
         mov2.setMovieDuration(145);
-        Bitmap bitmapmov2 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov2);
+       // Bitmap bitmapmov2 = BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.mov2);
         mov2.setMovieImage(bitmapmov2);
         mov2.setMovieType("Action/Adventure");
         mov2.setMovieDirector("Bryan Singer");
@@ -330,6 +330,6 @@ public class Instance {
         mov4.setMovieType("Action/Adventure");
         mov4.setMovieDirector("James Bobin");
         mov4.setMovieName("ALICE THROUGH THE LOOKING GLASS");
-
+*/
     }
 }
